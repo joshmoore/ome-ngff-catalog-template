@@ -1,0 +1,43 @@
+  <!-- from _includes/custom-head.html -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script>
+
+   <!-- favicon from https://realfavicongenerator.net/ -->
+   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png?v=1">
+   <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png?v=1">
+   <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon-16x16.png?v=1">
+   <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest?v=1">
+   <link rel="mask-icon" href="{{ site.baseurl }}/safari-pinned-tab.svg?v=1" color="#5bbad5">
+   <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico?v=1">
+   <meta name="msapplication-TileColor" content="#2b5797">
+   <meta name="theme-color" content="#ffffff">
+
+  <!-- https://string-db.org/cgi/help.pl?subpage=api%23embedding-the-interactive-network -->
+  <script type="text/javascript" src="https://string-db.org/javascript/combined_embedded_network_v2.0.3.js"></script>
+  <script>
+
+          function send_request_to_string() {
+
+              var inputField = document.getElementById('inputarea');
+
+              var text = inputField.value;
+
+              if (!text) {text = inputField.placeholder}; // placeholder
+
+              var proteins = text.split(' ');
+
+              /* the actual API query */
+
+              getSTRING('https://string-db.org', {
+                          'species':'9606',
+                          'identifiers':proteins,
+                          'network_flavor':'confidence', 
+                          'caller_identity': 'www.awesome_app.org'
+              })
+
+          }
+
+  </script>
+
+  <!-- end custom-head -->

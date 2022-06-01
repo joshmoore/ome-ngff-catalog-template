@@ -1,0 +1,10 @@
+title: "OME-NGFF Catalog"
+description: "A collection of OME-NGFF filesets available online"
+author: "OME"
+
+remote_theme: "jekyll/minima@master"
+
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-sitemap
